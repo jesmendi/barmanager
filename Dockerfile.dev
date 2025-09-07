@@ -2,16 +2,13 @@ FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
-# Instalar nodemon globalmente para hot-reload
 RUN npm install -g nodemon
 
-# Copiar package.json e instalar dependencias
 COPY package*.json ./
-RUN npm install
+RUN npm install --include=dev
 
 COPY . .
 
 EXPOSE 3000
 
-# Usar nodemon para desarrollo con hot-reload
 CMD ["nodemon", "server.js"]
