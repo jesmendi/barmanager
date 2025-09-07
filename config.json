@@ -1,0 +1,18 @@
+{
+  "drink": [
+    {
+      "name": "beer",
+      "value": 1
+    },
+    {
+      "name": "drink",
+      "value": 2
+    }
+   
+  ],
+  "capacity": 2,
+  "timeServing": 50,
+  "servingState" : "serving",
+  "completedState" : "completed"
+
+}

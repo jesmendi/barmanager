@@ -1,0 +1,11 @@
+{
+  "watch": ["app/", "server.js"],
+  "ext": "js,json",
+  "ignore": ["node_modules/", "*.log"],
+  "exec": "node server.js",
+  "restartable": "rs",
+  "verbose": true,
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

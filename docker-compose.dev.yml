@@ -1,0 +1,18 @@
+
+services:
+  node-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    container_name: node-api-dev
+    volumes:
+      - .:/usr/src/app  # Montar el código actual
+      - /usr/src/app/node_modules  # Evitar sobrescribir node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true  # Para hot-reload en Docker
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
