@@ -1,12 +1,15 @@
 // src/middleware/simpleLogger.js
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
+
 
 /**
  * Directory where log files will be stored
  */
-const logsDir = path.join(__dirname, '../logs');
-
+const logsDir = process.env.NODE_ENV === 'test' 
+    ? path.join(os.tmpdir(), 'barmanager-test-logs')
+    : path.join(__dirname, '../logs');
 /**
  * Current date in YYYY-MM-DD format for log file naming
  */
